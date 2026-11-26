@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeLedger — Household Budget</title>
+<meta name="description" content="HomeLedger: a household budget site. Track income and spending, set a budget per category, and see where the money goes — all in your browser, no account needed.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="logo" href="#/"><span class="logo-badge">$</span> HomeLedger</a>
+  <nav class="site-nav" aria-label="Sections">
+    <a class="nav-item" data-route="" href="#/">Dashboard</a>
+    <a class="nav-item" data-route="transactions" href="#/transactions">Transactions</a>
+    <a class="nav-item" data-route="budgets" href="#/budgets">Budgets</a>
+    <a class="nav-item" data-route="insights" href="#/insights">Insights</a>
+  </nav>
+  <span class="month-pill" id="month-badge">November 2026</span>
+</header>
+
+<main id="view" class="page"></main>
+
+<footer class="page site-foot">
+  <p>HomeLedger — a household budget site. Your data never leaves this browser: it is stored in localStorage on your device. Sample data for the Alvarez household (November 2026) is loaded on first visit.</p>
+  <p><button class="btn btn-quiet" data-action="reset-data">Reset to sample data</button></p>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
