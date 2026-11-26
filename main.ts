@@ -30,7 +30,11 @@ function openUp(dir: string): void {
 
 mkdirSync(out, { recursive: true });
 mkdirSync(join(out, 'app'), { recursive: true });
-cpSync(join(root, 'app'), join(out, 'app'), { recursive: true });
+const appDir = join(root, 'app');
+if (!existsSync(appDir)) {
+  throw new Error(`missing app directory: ${appDir}`);
+}
+cpSync(appDir, join(out, 'app'), { recursive: true });
 mkdirSync(join(out, 'screenshots'), { recursive: true });
 if (existsSync(join(root, 'screenshots'))) {
   cpSync(join(root, 'screenshots'), join(out, 'screenshots'), { recursive: true });
